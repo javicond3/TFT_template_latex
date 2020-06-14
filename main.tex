@@ -1,0 +1,245 @@
+\synctex=1
+\documentclass[11pt,oneside]{book}
+
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools}
+\usepackage{calc}
+\usepackage{float}
+\usepackage{acronym}
+\usepackage{siunitx}
+\usepackage{eurosym}
+\usepackage[titletoc]{appendix}
+\usepackage{tabularx} 
+\usepackage{amsmath}  
+\usepackage{graphicx} 
+\usepackage{multirow}
+\usepackage[top=0.9in, bottom=0.9in, right=0.9in, left=0.9in, letterpaper]{geometry} 
+\usepackage{cite} 
+\usepackage[spanish,es-lcroman]{babel}
+\usepackage{colortbl}
+\usepackage{longtable}
+\usepackage{eurosym}
+\usepackage{wrapfig}
+%para justificar el texto sin cortar palabras
+\usepackage[none]{hyphenat}
+
+% Orphan lines
+\widowpenalty10000
+\clubpenalty10000
+
+% Portada
+\usepackage{eso-pic,graphicx}
+
+\setlength{\marginparwidth}{2cm}
+% \setlength{\voffset}{-0.25in}
+\setlength{\parskip}{0.5em}
+
+\setcounter{tocdepth}{2} 
+
+% \usepackage{draftwatermark}
+% \SetWatermarkScale{4}
+\usepackage{subfig}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+% Disable todo notes
+%\usepackage{todonotes}
+\usepackage[disable]{todonotes}
+
+\setitemize{topsep=0pt,itemsep=0pt,partopsep=5pt,parsep=2pt}
+\setenumerate{topsep=0pt,itemsep=0pt,partopsep=5pt,parsep=2pt}
+
+\captionsetup[table]{labelfont={bf,color=details2},labelformat={default},labelsep=period,name={Tabla}}
+\captionsetup[figure]{labelfont={bf,color=details2},labelformat={default},labelsep=period,name={Figura}}
+
+
+\lstset{
+    basicstyle=\footnotesize\ttfamily,
+    numbers=none,               % Ort der Zeilennummern
+    numberstyle=\tiny,          % Stil der Zeilennummern
+    % stepnumber=2,               % Abstand zwischen den Zeilennummern
+    numbersep=5pt,              % Abstand der Nummern zum Text
+    tabsize=2,                  % Groesse von Tabs
+    extendedchars=true,         %
+    breaklines=true,            % Zeilen werden Umgebrochen
+    % keywordstyle=\color{red},
+    frame=single,         
+    % keywordstyle=[1]\textbf,    % Stil der Keywords
+    % keywordstyle=[2]\textbf,    %
+    % keywordstyle=[3]\textbf,    %
+    % keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+    % stringstyle=\color{white}\ttfamily, % Farbe der String
+    showspaces=false,           % Leerzeichen anzeigen ?
+    showtabs=false,             % Tabs anzeigen ?
+    belowcaptionskip=12pt,
+    xleftmargin=2em, 
+    xrightmargin=4pt,
+    % backgroundcolor=\color{lightgray},
+    showstringspaces=false,      % Leerzeichen in Strings anzeigen ?  
+    aboveskip=5pt,
+    belowskip=10pt,
+    literate= 
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {Ã}{{\~A}}1 {ã}{{\~a}}1 {Õ}{{\~O}}1 {õ}{{\~o}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+  {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+ }
+ 
+% Watermark
+% \usepackage[firstpage]{draftwatermark}
+% \SetWatermarkText{\textbf{Portada}}
+% \SetWatermarkScale{5}
+ 
+
+
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black,
+    hypertexnames=false]{hyperref}
+
+% Allows to change the color of chapter headers
+\definecolor{details}{HTML}{1F4E79}
+\definecolor{details2}{HTML}{4664a2}
+
+\usepackage{titlesec}
+% Section numbered
+% \titleformat{\section}
+%   {\normalfont\LARGE\bfseries\filleft}
+%   {}
+%   {0em}
+%   {%
+%     \parbox[b]{\dimexpr\linewidth-2.5cm\relax}{#1}\hfill%
+%     \parbox[b]{2cm}{\hfill{\fontsize{80}{96}\selectfont\thesection}}%
+%   }[{\color{details}\titlerule[0.5mm] }]
+
+% Section unnumbered
+% \titleformat{name=\section,numberless}
+%   {\vspace*{1cm}\normalfont\LARGE\bfseries\raggedleft\thispagestyle{plain}}
+%   {}
+%   {0em}
+%   {{#1}}[{\color{details}\titlerule[0.7mm] }]
+
+% Chapter numbered
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\scshape}
+  % { 
+    % \begin{tikzpicture}[remember picture]
+    %   	\draw[details2,line width=1.5pt] ++(-0.5\textwidth,1cm) -- +(\textwidth,0);
+	   % \node[anchor=center,yshift=1.1cm,rectangle, inner sep=15, fill=white] 
+             % {\normalfont\LARGE\scshape \chaptertitlename\ \thechapter}
+    % \end{tikzpicture}
+  % }
+    {\vspace{1cm}{\MakeUppercase{\chaptertitlename}}%
+    \rlap{ \resizebox{!}{1.5cm}{\thechapter} }}
+  {14pt}
+  {\vspace{0cm}\Huge\bfseries}[\vspace{1ex}{\color{details2}\titlerule[1.5pt]}] 
+
+
+
+% Chapter unnumbered
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\LARGE\bfseries\raggedleft\thispagestyle{plain}}
+  {}
+  {0pt}
+  {\Huge}[{\color{details2}\titlerule[1.5pt] }]  
+
+\titlespacing*{name=\chapter}{0pt}{0pt}{55pt}
+\titlespacing*{name=\chapter,numberless}{0pt}{0pt}{30pt}
+\titlespacing*{\section}{0pt}{10pt}{10pt}
+\titlespacing*{\subsection}{0pt}{5pt}{5pt}
+
+% \makeatletter
+% \renewcommand{\@seccntformat}[1]{%
+%   \ifcsname prefix@#1\endcsname
+%     \csname prefix@#1\endcsname
+%   \else
+%     \csname the#1\endcsname\quad
+%   \fi}
+% \newcommand\prefix@section{Sección \thesection. }
+
+% Fancy header
+\usepackage{fancyhdr}
+\lhead{\includegraphics[width=2cm]{img/logo_etsit.jpg}}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{37.53375pt}
+\setlength{\textheight}{640pt}
+
+\fancypagestyle{plain}{%
+  \fancyhead{} % get rid of headers on plain pages
+  \cfoot{\thepage}
+  \renewcommand{\headrulewidth}{0pt} % and the line
+}
+
+% Fancy chapter cover style
+
+% Fancy box
+\usepackage{fancybox} 
+\setlength{\fboxrule}{1pt} 
+\setlength{\fboxsep}{10pt} 
+\setlength{\shadowsize}{3pt}
+
+\usepackage{pifont} % http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+%Main information
+\newcommand{\authorname}{Nombre alumno}
+\newcommand{\tfgtitle}{TITULO TRABAJO}
+\newcommand{\tfgtitlees}{Título Trabajo}
+\newcommand{\supervisor}{Tutor}
+\newcommand{\fecha}{YYYY}
+
+\begin{document}
+%justificado sin cortar palabras
+\sloppy
+\pagenumbering{gobble}
+\include{0-preamble}
+\clearpage\null\newpage
+% \include{README}
+\pagestyle{fancy}
+\include{A-resumen}
+\include{B-contents}
+
+\renewcommand{\baselinestretch}{1.2}\normalsize
+\pagenumbering{arabic}
+\include {1-introduccion}
+\include{2-estado_arte}
+\include{3-desarrollo}
+\include{4-resultados}
+\include{5-conclusiones}
+
+include{C-conclusion}
+
+
+% Appendixes
+\begin{appendices}
+\appendix
+\include{anx-1}
+\end{appendices}
+    
+\cleardoublepage
+\phantomsection
+\thispagestyle{plain}
+\renewcommand{\baselinestretch}{1}\normalsize
+\addcontentsline{toc}{chapter}{Bibliografía}   % ieeetr
+\bibliographystyle{ieeetr}{
+    \small
+    \bibliography{biblio/ref}
+}
+
+\end{document}

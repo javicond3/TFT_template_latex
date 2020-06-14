@@ -1,0 +1,97 @@
+\pagestyle{fancy}
+\chapter*{README} \label{chap:readme} % El asterisco significa que el capítulo no tiene número
+
+% Esto es un comentario y no se incluye en el PDF
+
+Cada archivo es un cápitulo, de esta forma se pueden añadir tantos archivos como capítulos queramos y es una forma de tener todo bien estructurado. El archivo \textbf{main.tex} evitad editarlo y manejarlo con cuidado.
+
+Para insertar un párrafo es necesario dejar una línea en blanco, 
+ya que sino se añadirá a continuación en el mismo párrafo.
+
+Para poner una palabra entre comillas, es lo más raro que tiene Latex, hay que ponerla de la siguiente forma ``porque sino no las capta bien''.
+
+Para añadir una lista se hace de la siguiente forma, puediendo añadir una lista numerada o sin numerar. También se pueden meter listas dentro de listas.
+
+\begin{itemize}
+    \item Bullet point one
+    \item Bullet point two
+    \begin{itemize}
+        \item Bullet point one
+        \item Bullet point two
+    \end{itemize}
+    \item Bullet point three
+\end{itemize}
+
+\begin{enumerate}
+    \item Numbered list item one
+    \item Numbered list item two
+    \begin{enumerate}
+        \item Numbered list item one
+        \item Numbered list item two
+    \end{enumerate}
+    \item Numbered list item three
+\end{enumerate}
+
+Los comandos para anadir negrita (CRTL+b), cursiva (CRTL+i) funcionan igual que funcionan en un editor de texto normal. Así obtenemos \textbf{negrita}, \textit{cursiva} o \textbf{\textit{ambos}}.
+
+\section{Referencias}\label{sec:primero}
+
+El primer título de cada archivo debe ser \textit{chapter}, ya que marca el inicio de un nuevo capítulo. Para añadir nuevas secciones se utiza section o subsection.
+
+\subsection{Este título es de segundo nivel} \label{sec:segundo}
+
+\subsubsection{Este título es de tercer nivel} \label{sec:tercero} % No aparece en el índice
+
+Los label al lado de los títulos de capítulo o sección permite hacerlos referencia desde cualquier punto del documento, por eso deben de ser únicos. Así podemos hacer referencia a la Sec.~\ref{sec:primero} o al título de segundo nivel Sec.~\ref{sec:segundo}. El label nos permite referenciar también figuras y tablas como se verá a continuación.
+
+El símbolo que va antes de ref es importante para que ambos aparezcan siempre juntos siendo ALT GR+4 en Windows y Option+Ñ en Mac.
+
+\section{Citas} \label{sec:cites}
+
+Para citar se utiliza el formato bibtex, el editor se encarga del resto. Todas las citas se incluyen en el archivo biblio/ref.bib y se referencian de la siguiente forma~\cite{ghemawat2003google}. Al igual que en el caso anterior, la virgulilla es necesaria.
+
+Para referenciar una URL se puede utilizar esta página \url{http://www.citationmachine.net/bibtex/cite-a-website} que a partir de una URL te convierte la cita a bibtex.
+
+\section{Tablas y figuras} \label{sec:tablasyfiguras}
+
+Las figuras se insertan  de esta forma y podemos hacerla referencia Fig.~\ref{fig:logo_etsit} de la misma forma que hacermos referencia a los títulos, gracias al label.
+
+\begin{figure}[hbtp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{img/etsit.png} % Se puede indicar la anchura máxima de la foto
+    \caption{Esto es el título de la imagen} % En las figuras va debajo de la foto
+    \label{fig:logo_etsit}
+\end{figure}
+
+Las figuras se colocan en la posición en la que mejor encajen, aunque se pueden utilizar las letras hbtp que van entre corchetes al lado del begin\{figure\} para indicar donde se ponen siendo la h de here, la b de bottom, la t de top y la p de page (página completa). Así si se quiere fijar debajo de la página se puede utilizar [!b], y se pueden realizar combinaciones como [bt], [!hb], [!ht], etc.
+
+Las tablas tienen un poco más de complicación, aunque existen páginas que te permiten hacerlas y te devuelven el código. Un ejemplo es esta página \url{https://www.tablesgenerator.com/}, aunque luego hay que retocarlas un poco a veces. 
+
+Aquí hay más información sobre cómo se hacen las tablas \url{https://es.overleaf.com/learn/latex/Tables}.
+
+\begin{table}[hbtp]
+	\centering
+    \caption{Esto es el título de la tabla} % En las tablas va encima de la tabla
+	\label{tab:first_table} 
+    \begin{tabular}{l|c|c|c} % Alineación de las columnas (left, right, center) y bordes verticales
+        \hline % hline es el borde horizontal
+        Name      & Columna 2 & Columna 3 & Columna 4 \\ \hline \hline
+        Fila 1    & \tickYes  & \tickNo   & \tickYes \\ \hline
+        Fila 2    & \tickYes  & \tickNo   & \tickNo  \\ \hline 
+    \end{tabular}
+\end{table}
+    
+Al igual que las figuras, las tablas se colocan de forma automática aunque se pueden fijar haciendo uso de las mismas combinaciones de letras que las figuras. También las podemos referenciar Tabla~\ref{tab:first_table} de la misma forma que el resto.
+
+\section{Notas} \label{sec:notes}
+
+Se pueden utilizar notas al pie de página\footnote{Nota al pie de página} de esta forma.
+
+\todo[inline]{También se pueden utilizar notas al márgen o en el propio párrafo como este. Así se pueden remarcar comentarios que se ven mejor.}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec semper enim, vel rutrum ex. Ut tincidunt non libero sit amet maximus. Phasellus fringilla in enim vitae sollicitudin. Nullam condimentum eleifend malesuada. Sed finibus orci dignissim mattis tempus. Ut vestibulum tortor turpis. Maecenas interdum leo enim, vitae sagittis libero faucibus mollis. Integer eu efficitur lacus. Sed eu augue ante. Etiam eget tempor nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In odio magna, porta id quam sit amet, finibus placerat urna. Mauris id euismod velit. Suspendisse rhoncus scelerisque ligula, nec sodales turpis consequat non.
+\todo{Esto es una nota al margen.}
+
+Nunc cursus at orci at eleifend. Quisque magna lorem, efficitur ac leo in, porta aliquet nulla. Nam porttitor lectus sit amet magna egestas pharetra. Proin eu dolor nec risus auctor eleifend a vitae mauris. Nam dignissim dapibus enim. Cras non mauris eget dui cursus posuere. Integer aliquet ex eu interdum rhoncus. Sed velit orci, tempor ac ullamcorper ac, rhoncus vel enim. Phasellus sed vehicula turpis, nec maximus tellus. Sed metus libero, vehicula et molestie eget, ultrices eu odio. Integer ultrices, eros vel lacinia consectetur, lorem lorem eleifend ligula, eu malesuada risus metus eget mauris.
+
+Más información en \url{https://es.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}
